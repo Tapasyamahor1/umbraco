@@ -1,0 +1,91 @@
+﻿@using MyProject.Model;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.CandidateJobApplicationForm>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+		<!-- Main container -->
+
+		<!-- Blogpost meta data -->
+
+<style>
+    body {
+        font-family: 'Lato', Roboto, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h4 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #3544b1;
+    }
+
+    .detail-label {
+        font-weight: bold;
+        color: #212529;
+        display: inline-block;
+        width: 150px; /* Adjust the width as needed */
+    }
+
+    .detail-value {
+        color: #6c757d;
+        display: inline-block;
+    }
+
+    .resume-link {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+        .resume-link:hover {
+            color: #0056b3;
+        }
+</style>
+
+
+<div class="container">
+    <h4>Candidate Detail:</h4>
+    <div class="detail-label">First Name:</div>
+    <div class="detail-value">@Model.Value("firstName")</div> <br/>
+
+    <div class="detail-label">Last Name:</div>
+    <div class="detail-value">@Model.Value("lastName")</div><br />
+
+    <div class="detail-label">Email:</div>
+    <div class="detail-value">@Model.Value("email")</div><br />
+
+    <div class="detail-label">Phone Number:</div>
+    <div class="detail-value">@Model.Value("phoneNumber")</div><br />
+
+    <div class="detail-label">Job Title:</div>
+    <div class="detail-value">@Model.Value("jobTitle")</div><br />
+
+    <div class="detail-label">Cover Letter:</div>
+    <div class="detail-value">@Model.Value("coverLetter")</div><br />
+
+    <div class="detail-label">Resume:</div>
+    <div class="detail-value">
+        <a class="resume-link" href="@Model.Value("resume")" download>Download Resume</a>
+    </div>
+    <br />
+    <div class="detail-label">Status:</div>
+    <div class="detail-value">@Model.Value("status")</div>
+    <br />
+    <div class="detail-label">Date:</div>
+    <div class="detail-value">@Model.Value("date")</div><br />
+    <br />
+    <div>
+        @{
+            Html.RenderPartial("~/Views/Partials/Button.cshtml", new CandidateJobApplicationFormViewModel());
+        }
+    </div>
+</div>

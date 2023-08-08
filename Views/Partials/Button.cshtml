@@ -1,0 +1,56 @@
+﻿@using MyProject.Controllers;
+@model MyProject.Model.CandidateJobApplicationFormViewModel
+<style>
+    body {
+        font-family: 'Lato', Roboto, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h4 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #3544b1;
+    }
+
+    .detail-label {
+        font-weight: bold;
+        color: #212529;
+        display: inline-block;
+        width: 150px; /* Adjust the width as needed */
+    }
+
+    .detail-value {
+        color: #6c757d;
+        display: inline-block;
+    }
+
+    .resume-link {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+        .resume-link:hover {
+            color: #0056b3;
+        }
+</style>
+
+@using (Html.BeginUmbracoForm<CandidateJobApplicationController>(nameof(CandidateJobApplicationController.Edit)))
+{
+  
+<div class="container">
+   
+    <div>
+        <button class="btn btn-primary">Plan Interview</button>
+        <button class="btn btn-inverted">Screening</button>
+    </div>
+</div>
+
+}

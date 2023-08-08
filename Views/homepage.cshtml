@@ -1,0 +1,16 @@
+﻿@using MyProject.Model;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+
+<!-- Blogpost meta data -->
+@{
+	Html.RenderPartial("~/Views/Partials/JobApplicationForm.cshtml", new CandidateJobApplicationFormViewModel());
+}
+
+		
+
+		<!-- Grey Banner -->
+		<div class="container-fluid grey-bg">
+		

@@ -1,0 +1,8 @@
+﻿
+@inherits Umbraco.Cms.Web.Common.Macros.PartialViewMacroPage;
+
+@using MyProject.Model;
+
+@{
+    Html.RenderPartial("~/Views/Partials/ContactForm.cshtml", new ContactFormViewModel());
+}
